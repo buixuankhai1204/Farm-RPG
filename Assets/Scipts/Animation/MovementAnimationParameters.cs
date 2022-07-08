@@ -8,6 +8,7 @@ public class MovementAnimationParameters : MonoBehaviour
 
     private void Awake()
     {
+        AnimationEventPlayFootStepSound();
         animator = GetComponent<Animator>();
     }
 
