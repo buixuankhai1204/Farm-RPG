@@ -1,6 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 public class Player : SingletonBehaviour<Player>
@@ -30,7 +28,7 @@ public class Player : SingletonBehaviour<Player>
     private bool isPickingDown;
     private bool isIdle;
 
-    private Rigidbody2D rigidbody2D;
+    public Rigidbody2D rigidbody2D;
 
     private Direction PlayerDirection;
 
@@ -44,7 +42,7 @@ public class Player : SingletonBehaviour<Player>
         set => _playerInputIsDisable = value;
     }
 
-    private void Update()
+    void Update()
     {
         ResetTrigger();
         PlayerInputMovement();
@@ -65,7 +63,9 @@ public class Player : SingletonBehaviour<Player>
      isPickingRight,
      isPickingLeft,
      isPickingUp,
-     isPickingDown, false, false, false, false);
+     isPickingDown, false, false, false, false); 
+        PlayerMovement();
+
     }
 
     private void FixedUpdate()
@@ -76,7 +76,7 @@ public class Player : SingletonBehaviour<Player>
     void PlayerMovement()
     {
         Vector2 move = new Vector2(xInput * movementSpeed * Time.deltaTime, yInput * movementSpeed * Time.deltaTime);
-        rigidbody2D.MovePosition(rigidbody2D.position + move);
+        rigidbody2D.MovePosition( rigidbody2D.position + move);
     }
     
     private void ResetTrigger()
@@ -106,9 +106,9 @@ public class Player : SingletonBehaviour<Player>
 
     void PlayerInputMovement()
     {
-        float xInput = Input.GetAxisRaw("Horizontal");
-        float yInput = Input.GetAxisRaw("Vertical");
-
+         xInput = Input.GetAxis("Horizontal");
+         yInput = Input.GetAxis("Vertical");
+        
         if (xInput != 0 && yInput != 0)
         {
             xInput *= 0.71f;
@@ -117,6 +117,7 @@ public class Player : SingletonBehaviour<Player>
 
         if (xInput != 0 || yInput != 0)
         {
+
             isRunning = true;
             isWalking = false;
             isIdle = false;
