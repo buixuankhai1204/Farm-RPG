@@ -8,17 +8,20 @@ public class ItemPickUp : MonoBehaviour
     private InventoryManager inventoryManager;
     private void Awake()
     { 
-        inventoryManager = GameObject.Find("InventoryManager").GetComponent<InventoryManager>();
+        inventoryManager = GameObject.FindWithTag("InventoryManager").GetComponent<InventoryManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         Item item = other.GetComponent<Item>();
-
+        
         if (item != null)
         {
             ItemDetails itemDetails = inventoryManager.getItemDetails(item.ItemCode);
-            Debug.LogError(itemDetails.itemDescription);
+            if (itemDetails.canBePickup == true)
+            {
+                inventoryManager.AddItem(InventoryLocation.player, item, other.gameObject);
+            }
         }
     }
 }

@@ -6,6 +6,9 @@ public static class Settings
 
    public const float runningSpeed = 5.333f;
    public const float walkingSpeed = 2.666f;
+
+   public static int playerInitialInventoryCapacity = 24;
+   public static int playerMaximumInventoryCapacity = 48;
    
    public static int xInput;
    public static int yInput;

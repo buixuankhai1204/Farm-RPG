@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public delegate void MovementDelegate(float inputX, float inputY, bool isWalking, bool isRunning, bool isIdle,
     bool isCarrying,
@@ -11,6 +13,15 @@ public delegate void MovementDelegate(float inputX, float inputY, bool isWalking
 
 public static class EventHandler
 {
+    public static event Action<InventoryLocation, List<InventoryItem>> InventoryUpdateEvent;
+
+    public static void CallInventoryUpdateEvent(InventoryLocation inventoryLocation, List<InventoryItem> inventoryList)
+    {
+        if (InventoryUpdateEvent != null)
+        {
+            InventoryUpdateEvent(inventoryLocation, inventoryList);
+        }
+    }
     public static event MovementDelegate movementEvent;
 
     public static void CallMovementEvent(float inputX, float inputY, bool isWalking, bool isRunning, bool isIdle,
