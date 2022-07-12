@@ -9,12 +9,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1618227199770734785, guid: c729f47a6af02b94aa424a3a0fc1ac7c, type: 3}
       propertyPath: m_Name
-      value: Parsnip
+      value: BasicPickAxe
       objectReference: {fileID: 0}
     - target: {fileID: 2270660026041135080, guid: c729f47a6af02b94aa424a3a0fc1ac7c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0a1268bf801d5304ebf16458d7309ac1, type: 3}
+      objectReference: {fileID: 21300094, guid: 853ac38383c680342ac7e688bf29b197, type: 3}
     - target: {fileID: 2270660026041135080, guid: c729f47a6af02b94aa424a3a0fc1ac7c, type: 3}
       propertyPath: m_SortingLayer
       value: 6
@@ -128,4 +128,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab67af5b5669b7745bb72dc74024ebb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemCode: 10007
+  itemCode: 10013

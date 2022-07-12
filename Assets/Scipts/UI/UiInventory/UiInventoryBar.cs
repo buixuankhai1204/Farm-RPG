@@ -9,6 +9,7 @@ public class UiInventoryBar : MonoBehaviour
     private Player player;
     private InventoryManager inventoryManager;
     private RectTransform _rectTransform;
+    [HideInInspector] public GameObject inventoryTextBoxGameOject;
     private bool _isInventoryBarBottom = true;
     public  bool isInventoryBarBottom
     {

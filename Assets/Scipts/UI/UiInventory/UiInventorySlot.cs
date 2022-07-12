@@ -1,17 +1,21 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine.EventSystems;
 
-public class UiInventorySlot : MonoBehaviour , IBeginDragHandler,IDragHandler, IEndDragHandler
+public class UiInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private Player player;
     private InventoryManager inventoryManager;
     private Camera mainCamera;
+    private Canvas parentCanvas;
     private Transform parentItem;
     private GameObject draggedItem;
-    
+
+    [SerializeField] private GameObject invetoryTextBoxPrefab;
+
     public Image inventorySlotHighlight;
     public Image inventorySlotImage;
     public TextMeshProUGUI TextMeshProUGUI;
@@ -20,11 +24,12 @@ public class UiInventorySlot : MonoBehaviour , IBeginDragHandler,IDragHandler, I
 
     [HideInInspector] public ItemDetails itemDetails;
     [HideInInspector] public int itemQuantity;
+    [SerializeField] private int slotNumber = 0;
 
     private void Awake()
     {
         player = GameObject.FindWithTag(Tags.Player).GetComponent<Player>();
-        
+        parentCanvas = GetComponentInParent<Canvas>();
     }
 
     private void Start()
@@ -36,13 +41,15 @@ public class UiInventorySlot : MonoBehaviour , IBeginDragHandler,IDragHandler, I
 
     public void DropSelectedItemAtMousePosition()
     {
-        Debug.Log(itemDetails.itemCode);
         inventoryManager = GameObject.FindWithTag(Tags.InventoryManager).GetComponent<InventoryManager>();
-        Vector3 worldPosition = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -mainCamera.transform.position.z));
+        Vector3 worldPosition = mainCamera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y,
+            -mainCamera.transform.position.z));
+        Debug.Log(worldPosition);
         GameObject itemDraggedObject = Instantiate(itemPrefab, worldPosition, Quaternion.identity, parentItem);
-        Item item = itemDraggedObject.GetComponent<Item>();
-        inventoryManager.RemoveItem(InventoryLocation.player, itemDetails.itemCode);
+        SpriteRenderer img = itemDraggedObject.GetComponentInChildren<SpriteRenderer>();
+        img.sprite = itemDetails.itemSprite;
 
+        inventoryManager.RemoveItem(InventoryLocation.player, itemDetails.itemCode);
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -73,7 +80,9 @@ public class UiInventorySlot : MonoBehaviour , IBeginDragHandler,IDragHandler, I
             if (eventData.pointerCurrentRaycast.gameObject != null &&
                 eventData.pointerCurrentRaycast.gameObject.GetComponent<UiInventorySlot>() != null)
             {
-                
+                int toSlotNumber = eventData.pointerCurrentRaycast.gameObject.GetComponent<UiInventorySlot>()
+                    .slotNumber;
+                inventoryManager.SwapInventoryItems(InventoryLocation.player, slotNumber, toSlotNumber);
             }
             else
             {
@@ -81,10 +90,44 @@ public class UiInventorySlot : MonoBehaviour , IBeginDragHandler,IDragHandler, I
                 {
                     DropSelectedItemAtMousePosition();
                 }
-                
             }
 
             player.EnablePlayerInput();
+        }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (itemQuantity != 0)
+        {
+            inventoryBar.inventoryTextBoxGameOject = Instantiate(invetoryTextBoxPrefab, transform.position, quaternion.identity);
+            inventoryBar.inventoryTextBoxGameOject.transform.SetParent(parentCanvas.transform, false);
+
+            UiInventoryTextBox uiInventoryTextBox = inventoryBar.inventoryTextBoxGameOject.GetComponent<UiInventoryTextBox>();
+
+            string itemTypeDescription = inventoryManager.GetItemTypeDescription(itemDetails.itemType);
+            uiInventoryTextBox.SetTextBox(itemDetails.itemDescription, itemTypeDescription, "",
+                itemDetails.itemLongDescription, "", "");
+            if (inventoryBar.isInventoryBarBottom)
+            {
+                inventoryBar.inventoryTextBoxGameOject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 0f);
+                inventoryBar.inventoryTextBoxGameOject.transform.position = new Vector3(transform.position.x,
+                    transform.position.y + 50, transform.position.z);
+            }
+            else
+            {
+                inventoryBar.inventoryTextBoxGameOject.GetComponent<RectTransform>().pivot = new Vector2(0.5f, 1f);
+                inventoryBar.inventoryTextBoxGameOject.transform.position = new Vector3(transform.position.x,
+                    transform.position.y - 50, transform.position.z);
+            }
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (inventoryBar.inventoryTextBoxGameOject != null)
+        {
+            Destroy(inventoryBar.inventoryTextBoxGameOject);
         }
     }
 }

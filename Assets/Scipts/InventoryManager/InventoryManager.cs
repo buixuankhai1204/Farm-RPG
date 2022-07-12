@@ -22,12 +22,11 @@ public class InventoryManager : SingletonBehaviour<InventoryManager>
     private void CreateInventoryLists()
     {
         inventoryLists = new List<InventoryItem>[(int)InventoryLocation.count];
-        
-        for (int i = 0; i < (int)InventoryLocation.count; i++)
+        for (int i = 0; i < inventoryLists.Length; i++)
         {
             inventoryLists[i] = new List<InventoryItem>();
         }
-        
+
         inventoryListsCapacityIntArray = new int[(int)InventoryLocation.count];
         inventoryListsCapacityIntArray[(int)InventoryLocation.player] = Settings.playerInitialInventoryCapacity;
 
@@ -35,14 +34,11 @@ public class InventoryManager : SingletonBehaviour<InventoryManager>
     // Update is called once per frame
     private void CreateItemDetailDictionary()
     {
-        
         itemDetailsDictionary = new Dictionary<int, ItemDetails>();
-        foreach (ItemDetails itemDetails in itemList.ItemDetails)
+        foreach (ItemDetails itemDetails  in itemList.ItemDetails)
         {
-            // Debug.LogError("itemCode: " + itemDetails.itemCode + "- itemDescription: " + itemDetails.itemDescription);
-            itemDetailsDictionary.Add(itemDetails.itemCode, itemDetails); 
+            itemDetailsDictionary.Add(itemDetails.itemCode, itemDetails);
         }
-        
     }
 
     public void AddItem(InventoryLocation inventoryLocation, Item item, GameObject gameObjectToDelete)
@@ -130,6 +126,50 @@ public class InventoryManager : SingletonBehaviour<InventoryManager>
         {
             inventoryList.RemoveAt(position);
         }
+    }
+
+    public void SwapInventoryItems(InventoryLocation inventoryLocation, int fromItem, int toItem)
+    {
+        if (fromItem < inventoryLists[(int)InventoryLocation.player].Count &&
+            toItem < inventoryLists[(int)InventoryLocation.player].Count && fromItem != toItem && fromItem >= 0 &&
+            toItem >= 0)
+        {
+            InventoryItem fromInventoryItem = inventoryLists[(int)inventoryLocation][fromItem];
+            InventoryItem toInventoryItem = inventoryLists[(int)inventoryLocation][toItem];
+
+            inventoryLists[(int)inventoryLocation][toItem] = fromInventoryItem;
+            inventoryLists[(int)inventoryLocation][fromItem] = toInventoryItem;
+
+            EventHandler.CallInventoryUpdateEvent(inventoryLocation, inventoryLists[(int)inventoryLocation]);
+        }
+    }
+
+    public string GetItemTypeDescription(ItemType itemType)
+    {
+        string itemTypeDescription;
+        switch (itemType)
+        {
+            case ItemType.Breaking_tool:
+                itemTypeDescription = Settings.BreakingTool;
+                break;
+            case ItemType.Chopping_tool:
+                itemTypeDescription = Settings.ChoppingTool;
+                break;
+            case ItemType.Reaping_tool:
+                itemTypeDescription = Settings.ReapingTool;
+                break;
+            case ItemType.Watering_tool:
+                itemTypeDescription = Settings.WateringTool;
+                break;
+            case ItemType.Collecting_tool:
+                itemTypeDescription = Settings.CollectingTool;
+                break;
+                default:
+                    itemTypeDescription = itemType.ToString();
+                    break;
+        }
+
+        return itemTypeDescription;
     }
     public ItemDetails getItemDetails(int itemCode)
     {

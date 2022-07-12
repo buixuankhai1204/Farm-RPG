@@ -135,9 +135,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: slotNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 682812255}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: invetoryTextBoxPrefab
+      value: 
+      objectReference: {fileID: 3574273434282598222, guid: 04f0be5bc3f005e479d30018725a7a93, type: 3}
     - target: {fileID: 7545606503258679711, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: m_Name
       value: UiInventorySlot3
@@ -281,7 +289,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7783418, y: 1}
+    m_SensorSize: {x: 1.7783883, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -298,7 +306,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 180904180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.48, y: -6.85, z: -9.715032}
+  m_LocalPosition: {x: 2.06, y: -10.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -412,9 +420,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: slotNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 682812255}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: invetoryTextBoxPrefab
+      value: 
+      objectReference: {fileID: 3574273434282598222, guid: 04f0be5bc3f005e479d30018725a7a93, type: 3}
     - target: {fileID: 7545606503258679711, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: m_Name
       value: UiInventorySlot1
@@ -600,9 +616,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: slotNumber
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 682812255}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: invetoryTextBoxPrefab
+      value: 
+      objectReference: {fileID: 3574273434282598222, guid: 04f0be5bc3f005e479d30018725a7a93, type: 3}
     - target: {fileID: 7545606503258679711, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: m_Name
       value: UiInventorySlot8
@@ -962,7 +986,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.48, y: -6.85, z: -9.715032}
+  m_LocalPosition: {x: 2.06, y: -10.9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1203,6 +1227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 980aaad7f52e8d4439a95cbd9c497f19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryTextBoxGameOject: {fileID: 0}
   blank16x16Sprite: {fileID: 21300000, guid: 89c46045b5f23d840b62099f6f1f6344, type: 3}
   inventorySlot:
   - {fileID: 4591037164154604370}
@@ -1267,9 +1292,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: slotNumber
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 682812255}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: invetoryTextBoxPrefab
+      value: 
+      objectReference: {fileID: 3574273434282598222, guid: 04f0be5bc3f005e479d30018725a7a93, type: 3}
     - target: {fileID: 7545606503258679711, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: m_Name
       value: UiInventorySlot4
@@ -1566,7 +1599,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098855371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.48, y: -6.85, z: 0.2849684}
+  m_LocalPosition: {x: 2.06, y: -10.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1676,9 +1709,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: slotNumber
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 682812255}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: invetoryTextBoxPrefab
+      value: 
+      objectReference: {fileID: 3574273434282598222, guid: 04f0be5bc3f005e479d30018725a7a93, type: 3}
     - target: {fileID: 7545606503258679711, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: m_Name
       value: UiInventorySlot5
@@ -1915,9 +1956,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: slotNumber
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 682812255}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: invetoryTextBoxPrefab
+      value: 
+      objectReference: {fileID: 3574273434282598222, guid: 04f0be5bc3f005e479d30018725a7a93, type: 3}
     - target: {fileID: 7545606503258679711, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: m_Name
       value: UiInventorySlot7
@@ -2036,9 +2085,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: slotNumber
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 682812255}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: invetoryTextBoxPrefab
+      value: 
+      objectReference: {fileID: 3574273434282598222, guid: 04f0be5bc3f005e479d30018725a7a93, type: 3}
     - target: {fileID: 7545606503258679711, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: m_Name
       value: UiInventorySlot9
@@ -2234,9 +2291,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: slotNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 682812255}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: invetoryTextBoxPrefab
+      value: 
+      objectReference: {fileID: 3574273434282598222, guid: 04f0be5bc3f005e479d30018725a7a93, type: 3}
     - target: {fileID: 7545606503258679711, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: m_Name
       value: UiInventorySlot2
@@ -2366,9 +2431,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: slotNumber
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 682812255}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: invetoryTextBoxPrefab
+      value: 
+      objectReference: {fileID: 3574273434282598222, guid: 04f0be5bc3f005e479d30018725a7a93, type: 3}
     - target: {fileID: 7545606503258679711, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: m_Name
       value: UiInventorySlot10
@@ -2582,6 +2655,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23775ee61df8f0947a9e404ca56eb66a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1783974399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1783974401}
+  - component: {fileID: 1783974400}
+  m_Layer: 0
+  m_Name: TimeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1783974400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783974399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81a33676020867048a8db28e7f5006ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1783974401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783974399}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1845936387
 GameObject:
   m_ObjectHideFlags: 0
@@ -2651,9 +2768,17 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: slotNumber
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 682812255}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: invetoryTextBoxPrefab
+      value: 
+      objectReference: {fileID: 3574273434282598222, guid: 04f0be5bc3f005e479d30018725a7a93, type: 3}
     - target: {fileID: 7545606503258679711, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: m_Name
       value: UiInventorySlot6
@@ -3018,6 +3143,10 @@ PrefabInstance:
       propertyPath: inventoryBar
       value: 
       objectReference: {fileID: 682812255}
+    - target: {fileID: 2236904458734293809, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
+      propertyPath: invetoryTextBoxPrefab
+      value: 
+      objectReference: {fileID: 3574273434282598222, guid: 04f0be5bc3f005e479d30018725a7a93, type: 3}
     - target: {fileID: 7545606503258679711, guid: fad4b481b0fde8d4caa290838e54194a, type: 3}
       propertyPath: m_Name
       value: UiInventorySlot0
