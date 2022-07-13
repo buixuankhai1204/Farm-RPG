@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -32,11 +33,20 @@ public class UiInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         parentCanvas = GetComponentInParent<Canvas>();
     }
 
+    private void OnEnable()
+    {
+        EventHandler.AfterSceneloadFadeInEvent += SceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        EventHandler.AfterSceneloadFadeInEvent -= SceneLoaded;
+    }
+    
     private void Start()
     {
         inventoryManager = GameObject.FindWithTag(Tags.InventoryManager).GetComponent<InventoryManager>();
         mainCamera = Camera.main;
-        parentItem = GameObject.FindWithTag(Tags.ItemParentTransform).transform;
     }
 
     public void DropSelectedItemAtMousePosition()
@@ -129,5 +139,10 @@ public class UiInventorySlot : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         {
             Destroy(inventoryBar.inventoryTextBoxGameOject);
         }
+    }
+
+    public void SceneLoaded()
+    {
+        parentItem = GameObject.FindWithTag(Tags.ItemParentTransform).transform;
     }
 }

@@ -6,5 +6,6 @@ public static class Tags
     public static string Player = "Player";
     public static string InventoryManager = "InventoryManager";
     public static string ItemParentTransform = "ItemParentTransform";
+    public static string SceneControllerManager = "SceneControllerManager";
 
 }

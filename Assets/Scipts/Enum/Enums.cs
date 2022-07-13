@@ -47,4 +47,11 @@ public enum ItemType
     Count,
 }
 
+public enum SceneName
+{
+    Scene1Farm,
+    Scene2Field,
+    Scene3Cabin
+}
+
 

@@ -43,9 +43,11 @@ public class Player : SingletonBehaviour<Player>
         set => _playerInputIsDisable = value;
     }
 
+    private SceneControllerManager sceneControllerManager;
     protected override void Awake()
     {
         camera = Camera.main;
+        sceneControllerManager = GameObject.FindWithTag(Tags.SceneControllerManager).GetComponent<SceneControllerManager>();
     }
 
     void Update()
@@ -55,6 +57,7 @@ public class Player : SingletonBehaviour<Player>
             ResetTrigger();
             PlayerInputMovement();
             PlayerWalkingInput();
+            TestPlayer();
         
             EventHandler.CallMovementEvent( xInput, yInput, isWalking, isRunning, isIdle, isCarrying, toolEffect,isUsingToolRight,
                 isUsingToolLeft,
@@ -221,5 +224,13 @@ public class Player : SingletonBehaviour<Player>
     public Vector3 GetPlayerViewportPosition()
     {
         return camera.WorldToViewportPoint(transform.position);
+    }
+
+    public void TestPlayer()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            sceneControllerManager.FadeAndLoadScene(SceneName.Scene1Farm.ToString(), transform.position);
+        }
     }
 }

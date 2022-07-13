@@ -1,14 +1,18 @@
 
+using System;
 using Cinemachine;
 using UnityEngine;
 
 public class SwitchConfinderBoundingShape : MonoBehaviour
 {
-    public
-    // Start is called before the first frame update
-    void Start()
+    public void OnEnable()
     {
-        SwitchBoundShape();
+        EventHandler.AfterSceneLoadEvent += SwitchBoundShape;
+    }
+    
+    public void OnDisable()
+    {
+        EventHandler.AfterSceneLoadEvent -= SwitchBoundShape;
     }
 
     // Update is called once per frame
